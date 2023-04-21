@@ -1,5 +1,4 @@
 FROM ubuntu
 ENV DEBIAN_FRONTEND noninteractive
-SHELL ["/bin/bash", "-c"] 
 RUN apt-get update && \
-    apt-get -y install gcc build-essential libz-dev git python3 python3-setuptools && git clone https://github.com/millanek/Dsuite.git && cd Dsuite && make && cd utils && python3 setup.py install --user --prefix= && echo 'export PATH="/Dsuite/Build:$PATH"' >> ~/.bashrc && source ~/.bashrc && cd 
+    apt-get -y install gcc build-essential libz-dev git python3 python3-setuptools && git clone https://github.com/millanek/Dsuite.git && cd Dsuite && make && cd utils && python3 setup.py install --user --prefix= && cd 
